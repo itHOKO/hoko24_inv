@@ -1,9 +1,9 @@
-import {  FetchUserAttributesOutput, fetchUserAttributes, signOut } from "aws-amplify/auth";
+import {   fetchUserAttributes, signOut } from "aws-amplify/auth";
 import {  Divider, MenuItem, Menu, Flex } from '@aws-amplify/ui-react';
 import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";
 import outputs from '../../amplify_outputs.json';
 import { Amplify } from "aws-amplify";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 Amplify.configure(outputs);
 
