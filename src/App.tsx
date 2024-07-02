@@ -4,7 +4,6 @@ import { Amplify } from "aws-amplify";
 import outputs from '../amplify_outputs.json';
 import { TabBar } from './components/TabBar.tsx';
 import { useSymbologyScanner } from '@use-symbology-scanner/react';
-import { useRef } from 'react';
 
 
 
