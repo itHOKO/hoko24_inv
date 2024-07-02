@@ -5,20 +5,21 @@ import outputs from '../amplify_outputs.json';
 import { TabBar } from './components/TabBar.tsx';
 
 
+
 Amplify.configure(outputs);
 
 //const userAttributes = await fetchUserAttributes();
 
 function App() {
 
-  return (
 
+
+  return (
     <Authenticator signUpAttributes={['preferred_username']}>
       {({ }) => (
-        <main>
           <TabBar />
 
-        </main>
+
 
       )}
     </Authenticator>
