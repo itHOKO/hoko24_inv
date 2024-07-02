@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "^6.1.9",
+    "@aws-amplify/ui-react": "^6.1.12",
     "@heroicons/react": "^2.1.4",
     "@use-symbology-scanner/react": "^1.0.3",
     "aws-amplify": "^6.2.0",

@@ -1,6 +1,7 @@
 import {  Tabs, Image, Grid } from '@aws-amplify/ui-react';
 import hokoLogo from '../assets/HOKO Logo Dunkelblau(0,97,147).png';
 import MenuCustom from './MenuCustom';
+import Inv_Form from './Tools_Page';
 
 
 
@@ -24,7 +25,7 @@ export const TabBar = () => (
 
         <Tabs.Panel value="1">Content of the first tab</Tabs.Panel>
         <Tabs.Panel value="2">Content of the second tab</Tabs.Panel>
-        <Tabs.Panel value="3">Content of the third tab</Tabs.Panel>
+        <Tabs.Panel value="3"><Inv_Form/></Tabs.Panel>
         <Tabs.Panel value="4">Content of the fourth tab</Tabs.Panel>
       </Grid>
     </Tabs.Container>
