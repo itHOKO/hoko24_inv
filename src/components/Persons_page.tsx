@@ -1,5 +1,5 @@
 import { Amplify } from 'aws-amplify';
-import ToolsCreateForm from '../../ui-components/ToolsCreateForm';
+import PersonCreateForm from '../../ui-components/PersonCreateForm';
 import outputs from '../../amplify_outputs.json';
 import { useEffect, useState } from "react";
 import type { Schema } from "../../amplify/data/resource";
@@ -10,34 +10,34 @@ import { useTheme } from '@aws-amplify/ui-react';
 Amplify.configure(outputs);
 const client = generateClient<Schema>();
 
-export default function Tools_Page() {
+export default function Persons_Page() {
 
   const {tokens} = useTheme();
-  const [tools, setTools] = useState<Array<Schema["Tools"]["type"]>>([]);
+  const [persons, setPersons] = useState<Array<Schema["Person"]["type"]>>([]);
 
   useEffect(() => {
-    client.models.Tools.observeQuery().subscribe({
-      next: (data) => setTools([...data.items]),
+    client.models.Person.observeQuery().subscribe({
+      next: (data) => setPersons([...data.items]),
     });
   }, []);
 
   return (
     <Grid
       templateColumns="1fr 4fr">
-      <ToolsCreateForm />
+      <PersonCreateForm />
       <Collection
-        items={tools}
+        items={persons}
         type="list"
         direction="row"
         gap="20px"
         wrap="nowrap"
       >
-        {(tool, index) => (
-          <Card key={index} backgroundColor={tokens.colors.secondary[10]} variation="elevated">
+        {(persons, index) => (
+          <Card key={index} backgroundColor={tokens.colors.primary[10]} variation="elevated">
             <Flex direction="column" alignItems="center" gap="1rem">
-              <Heading level={5}>{tool.name}</Heading>
-              <Image src={"https://barcode.tec-it.com/barcode.ashx?data="+tool.id+"&code=DataMatrix&translate-esc=on&dmsize=Default'"} alt={tool.name} width="70px" />
-              <Text>{tool.description}</Text>
+              <Heading level={5}>{persons.name}</Heading>
+              <Image src={"https://barcode.tec-it.com/barcode.ashx?data="+persons.id+"&code=DataMatrix&translate-esc=on&dmsize=Default'"} alt={persons.name} width="70px" />
+              <Text>{persons.role}</Text>
               </Flex>
 
           </Card>

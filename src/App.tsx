@@ -8,6 +8,9 @@ import { useSymbologyScanner } from '@use-symbology-scanner/react';
 
 
 
+
+
+
 Amplify.configure(outputs);
 
 //const userAttributes = await fetchUserAttributes();
@@ -18,19 +21,22 @@ function App() {
     prefix: '',
     suffix: '\n',
     maxDelay: 20
-}
-
-  const handleSymbol = (symbol: string | void) => {
-    console.log(symbol);
-    
   }
 
-  useSymbologyScanner(handleSymbol, {  ignoreRepeats: false, scannerOptions: scannerOptions})
+  const handleSymbol = (symbol: string | void) => {
+    console.log('handleSymbol called');
+    alert(symbol);
+
+  }
+
+
+
+  useSymbologyScanner(handleSymbol, { ignoreRepeats: true, scannerOptions: scannerOptions })
 
   return (
     <Authenticator signUpAttributes={['preferred_username']}>
       {({ }) => (
-          <TabBar />
+        <TabBar />
 
 
       )}
