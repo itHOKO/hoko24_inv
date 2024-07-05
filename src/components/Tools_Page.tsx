@@ -28,7 +28,7 @@ export default function Tools_Page() {
       <Collection
         items={tools}
         type="list"
-        direction="row"
+        direction="column"
         gap="20px"
         wrap="nowrap"
       >
@@ -36,8 +36,8 @@ export default function Tools_Page() {
           <Card key={index} backgroundColor={tokens.colors.secondary[10]} variation="elevated">
             <Flex direction="column" alignItems="center" gap="1rem">
               <Heading level={5}>{tool.name}</Heading>
-              <Image src={"https://barcode.tec-it.com/barcode.ashx?data="+tool.id+"&code=DataMatrix&translate-esc=on&dmsize=Default'"} alt={tool.name} width="70px" />
-              <Text>{tool.description}</Text>
+              <Image src={"https://barcodeapi.org/api/auto/"+tool.id} alt={tool.name} width="70px" />
+              <Text>{tool.id}</Text>
               </Flex>
 
           </Card>

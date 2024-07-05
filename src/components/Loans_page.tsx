@@ -35,7 +35,7 @@ export default function Loans_Page() {
             <Flex direction="column" alignItems="center" gap="1rem">
               <Heading level={5}>{loans.person_id}</Heading>
               <Heading level={5}>{loans.tool_id}</Heading>
-              <Image src={"https://barcode.tec-it.com/barcode.ashx?data="+loans.id+"&code=QRCode&translate-esc=on&dmsize=Default'"} alt={loans.id} width="70px" />
+              <Image src={"https://barcodeapi.org/api/auto/"+loans.id} alt={loans.id} width="70px" />
               </Flex>
 
           </Card>

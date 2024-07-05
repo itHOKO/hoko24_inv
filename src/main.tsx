@@ -4,6 +4,8 @@ import App from "./App.tsx";
 import "./index.css";
 import { Amplify } from "aws-amplify";
 import outputs from "../amplify_outputs.json";
+import '@fontsource/inter';
+
 
 import '@aws-amplify/ui-react/styles.css';
 import { Theme, ThemeProvider } from '@aws-amplify/ui-react';
