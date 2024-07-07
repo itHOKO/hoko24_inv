@@ -1,6 +1,6 @@
 body {
   margin: 3vh 3vw;
-  background: linear-gradient(180deg, rgba(15, 105, 165,60%), rgb(255, 255, 255));
+  background: white;/*linear-gradient(180deg, rgba(15, 105, 165,60%), rgb(255, 255, 255));*/
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 

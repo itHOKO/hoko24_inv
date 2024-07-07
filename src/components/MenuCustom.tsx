@@ -30,11 +30,9 @@ function MenuCustom() {
 
     
     return (
-        <Menu menuAlign="end">
+        <Menu menuAlign="end" size="large">
         <MenuItem  onClick={() => signOut()} title="Logout" ><Flex alignItems="center" justifyContent="flex-end"><ArrowRightStartOnRectangleIcon height="2rem"/>{username} </Flex></MenuItem>
         <Divider />
-        <MenuItem>Option 2</MenuItem>
-        <MenuItem>Option 3</MenuItem>
 
       </Menu>
 
