@@ -22,11 +22,13 @@ export default function ToolsUpdateForm(props) {
   const initialValues = {
     name: "",
     description: "",
+    position: "",
   };
   const [name, setName] = React.useState(initialValues.name);
   const [description, setDescription] = React.useState(
     initialValues.description
   );
+  const [position, setPosition] = React.useState(initialValues.position);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = toolsRecord
@@ -34,6 +36,7 @@ export default function ToolsUpdateForm(props) {
       : initialValues;
     setName(cleanValues.name);
     setDescription(cleanValues.description);
+    setPosition(cleanValues.position);
     setErrors({});
   };
   const [toolsRecord, setToolsRecord] = React.useState(toolsModelProp);
@@ -55,6 +58,7 @@ export default function ToolsUpdateForm(props) {
   const validations = {
     name: [{ type: "Required" }],
     description: [],
+    position: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -84,6 +88,7 @@ export default function ToolsUpdateForm(props) {
         let modelFields = {
           name,
           description: description ?? null,
+          position: position ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -146,6 +151,7 @@ export default function ToolsUpdateForm(props) {
             const modelFields = {
               name: value,
               description,
+              position,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -171,6 +177,7 @@ export default function ToolsUpdateForm(props) {
             const modelFields = {
               name,
               description: value,
+              position,
             };
             const result = onChange(modelFields);
             value = result?.description ?? value;
@@ -184,6 +191,32 @@ export default function ToolsUpdateForm(props) {
         errorMessage={errors.description?.errorMessage}
         hasError={errors.description?.hasError}
         {...getOverrideProps(overrides, "description")}
+      ></TextField>
+      <TextField
+        label="Position"
+        isRequired={false}
+        isReadOnly={false}
+        value={position}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              description,
+              position: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.position ?? value;
+          }
+          if (errors.position?.hasError) {
+            runValidationTasks("position", value);
+          }
+          setPosition(value);
+        }}
+        onBlur={() => runValidationTasks("position", position)}
+        errorMessage={errors.position?.errorMessage}
+        hasError={errors.position?.hasError}
+        {...getOverrideProps(overrides, "position")}
       ></TextField>
       <Flex
         justifyContent="space-between"

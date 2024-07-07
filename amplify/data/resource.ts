@@ -11,6 +11,7 @@ const schema = a.schema({
     .model({
       name: a.string().required(),
       description: a.string(),
+      position: a.string(),
       loans: a.hasMany("Loans",'tool_id'),
     })
     .authorization((allow) => [allow.owner()]),

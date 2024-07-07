@@ -18,16 +18,19 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type ToolsCreateFormInputValues = {
     name?: string;
     description?: string;
+    position?: string;
 };
 export declare type ToolsCreateFormValidationValues = {
     name?: ValidationFunction<string>;
     description?: ValidationFunction<string>;
+    position?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ToolsCreateFormOverridesProps = {
     ToolsCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
     description?: PrimitiveOverrideProps<TextFieldProps>;
+    position?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ToolsCreateFormProps = React.PropsWithChildren<{
     overrides?: ToolsCreateFormOverridesProps | undefined | null;

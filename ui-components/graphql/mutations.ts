@@ -28,6 +28,7 @@ export const createLoans = /* GraphQL */ `
         id
         name
         owner
+        position
         updatedAt
         __typename
       }
@@ -72,6 +73,7 @@ export const createTools = /* GraphQL */ `
       }
       name
       owner
+      position
       updatedAt
       __typename
     }
@@ -103,6 +105,7 @@ export const deleteLoans = /* GraphQL */ `
         id
         name
         owner
+        position
         updatedAt
         __typename
       }
@@ -147,6 +150,7 @@ export const deleteTools = /* GraphQL */ `
       }
       name
       owner
+      position
       updatedAt
       __typename
     }
@@ -178,6 +182,7 @@ export const updateLoans = /* GraphQL */ `
         id
         name
         owner
+        position
         updatedAt
         __typename
       }
@@ -222,6 +227,7 @@ export const updateTools = /* GraphQL */ `
       }
       name
       owner
+      position
       updatedAt
       __typename
     }

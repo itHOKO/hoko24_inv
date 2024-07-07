@@ -25,6 +25,7 @@ export const getLoans = /* GraphQL */ `
         id
         name
         owner
+        position
         updatedAt
         __typename
       }
@@ -63,6 +64,7 @@ export const getTools = /* GraphQL */ `
       }
       name
       owner
+      position
       updatedAt
       __typename
     }
@@ -124,6 +126,7 @@ export const listTools = /* GraphQL */ `
         id
         name
         owner
+        position
         updatedAt
         __typename
       }
